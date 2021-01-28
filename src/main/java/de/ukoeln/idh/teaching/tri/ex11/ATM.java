@@ -33,28 +33,39 @@ public class ATM {
 
 	}
 
+	protected boolean canWithdraw(int value) {
+		return value % 5 == 0 && value > 0;
+	}
+
 	/**
 	 * Main user loop. Allows users to enter an integer number or "exit" to leave
 	 * the loop.
 	 */
 	public void run() {
 		String userChoice;
+		System.out.print("Please enter amount: ");
 		try (Scanner in = new Scanner(System.in)) {
 			do {
 				userChoice = in.next();
 				if (userChoice.equalsIgnoreCase("exit")) {
 					break;
 				} else if (userChoice.matches("^\\d+$")) {
+					int userValue = Integer.valueOf(userChoice);
 					try {
-						int[] bills = withdraw(Integer.valueOf(userChoice));
-						System.out.println(StringUtils.join(bills, ','));
+						if (canWithdraw(userValue)) {
+							int[] bills = withdraw(userValue);
+							System.out.println(StringUtils.join(bills, ','));
+						} else {
+							System.out.println("Incorrect value");
+						}
 					} catch (RuntimeException e) {
-						System.err.println("Incorrect value");
+						System.out.println("Incorrect value");
 					}
 				} else {
-					System.err.println("Incorrect value");
+					System.out.println("Incorrect value");
 				}
 				System.out.println();
+				System.out.print("Please enter amount: ");
 			} while (in.hasNext());
 		}
 	}
