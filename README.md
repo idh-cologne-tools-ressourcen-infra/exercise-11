@@ -45,3 +45,8 @@ Please implement unit tests for the methods `canWidthdraw(int)` and `withdraw(in
 
 ## Step 4
 Commit your program to the repository and push it to the repository.
+
+## Resources
+
+- [JUnit User Guide](https://junit.org/junit5/docs/current/user-guide/)
+- [Javadoc](https://javadoc.io/doc/org.junit.jupiter/junit-jupiter-api/latest/index.html)
