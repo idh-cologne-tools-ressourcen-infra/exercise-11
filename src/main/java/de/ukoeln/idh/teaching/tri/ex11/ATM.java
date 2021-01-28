@@ -46,7 +46,6 @@ public class ATM {
 		System.out.print("Please enter amount: ");
 		try (Scanner in = new Scanner(System.in)) {
 			do {
-
 				userChoice = in.next();
 				if (userChoice.equalsIgnoreCase("exit")) {
 					break;
