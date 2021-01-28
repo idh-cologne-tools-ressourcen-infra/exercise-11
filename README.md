@@ -36,6 +36,8 @@ As you can see, the ATM is somewhat error proof: You cannot withdraw 0€, negat
 
 Run the program, play with it. Can you crash the program via user input? Inspect the code and try to understand how it works and why.
 
+(Selecting a useful set of banknotes is a surprisingly hard task. The algorithm implemented in this ATM class always gives out the least number of banknotes, which is absolutely not what people want when they are in front of an ATM).
+
 ## Step 3
 The class `de.ukoeln.idh.teaching.tri.ex11.TestATM`, is currently empty. The class is supposed to contain unit tests for the ATM class.
 
