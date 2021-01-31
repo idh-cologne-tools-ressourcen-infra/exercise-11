@@ -20,11 +20,14 @@ public class ATM {
 	 */
 	public int[] withdraw(int amount) {
 		int[] numberOfBills = new int[bills.length];
-		for (int b = 0; b < bills.length; b++) {
-			int currentBill = bills[b];
-			numberOfBills[b] = amount / currentBill;
-			amount = amount - (numberOfBills[b] * currentBill);
+		if(amount > 0){
+			for (int b = 0; b < bills.length; b++) {
+				int currentBill = bills[b];
+				numberOfBills[b] = amount / currentBill;
+				amount = amount - (numberOfBills[b] * currentBill);
+			}
 		}
+
 		if (amount == 0) {
 			return numberOfBills;
 		} else {
@@ -50,7 +53,7 @@ public class ATM {
 				if (userChoice.equalsIgnoreCase("exit")) {
 					break;
 				} else if (userChoice.matches("^\\d+$")) {
-					int userValue = Integer.valueOf(userChoice);
+					int userValue = Integer.parseInt(userChoice);
 					try {
 						if (canWithdraw(userValue)) {
 							int[] bills = withdraw(userValue);
@@ -73,6 +76,7 @@ public class ATM {
 	public static void main(String[] args) {
 		// create a new instance and launch it
 		new ATM().run();
+
 	}
 
 }
