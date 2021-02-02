@@ -49,7 +49,7 @@ public class ATM {
 				userChoice = in.next();
 				if (userChoice.equalsIgnoreCase("exit")) {
 					break;
-				} else if (userChoice.matches("^\\d+$")) {
+				} else if (userChoice.matches("^\\d{1,10}$")) {
 					int userValue = Integer.valueOf(userChoice);
 					try {
 						if (canWithdraw(userValue)) {
