@@ -1,7 +1,7 @@
 package de.ukoeln.idh.teaching.tri.ex11;
 
+import java.util.Arrays;
 import java.util.Scanner;
-
 import org.apache.commons.lang3.StringUtils;
 
 public class ATM {
@@ -13,7 +13,7 @@ public class ATM {
 
 	/**
 	 * Withdrawing logic.
-	 * 
+	 *
 	 * @param amount The amount to withdraw
 	 * @return An array of integers, showing how many of which bill to return (in
 	 *         descending order)
@@ -26,6 +26,7 @@ public class ATM {
 			amount = amount - (numberOfBills[b] * currentBill);
 		}
 		if (amount == 0) {
+			System.out.println("Was wird denn hier übergeben.. "+Arrays.toString(numberOfBills));
 			return numberOfBills;
 		} else {
 			throw new RuntimeException("Cannot withdraw");
@@ -49,7 +50,7 @@ public class ATM {
 				userChoice = in.next();
 				if (userChoice.equalsIgnoreCase("exit")) {
 					break;
-				} else if (userChoice.matches("^\\d{1,10}$")) {
+				} else if (userChoice.matches("^\\d+$")) {
 					int userValue = Integer.valueOf(userChoice);
 					try {
 						if (canWithdraw(userValue)) {
