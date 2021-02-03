@@ -18,8 +18,8 @@ public class TestATM {
 		assertArrayEquals(new int[] {0, 0, 1, 0, 0, 0, 1 }, atm.withdraw(105));
 		assertArrayEquals(new int[] {0, 1, 0, 0, 0, 0, 1 }, atm.withdraw(205));
 		assertArrayEquals(new int[] {1, 0, 0, 0, 0, 0, 1 }, atm.withdraw(505));
-		assertThrows(RuntimeException.class, ()->{atm.withdraw(321);});
-		assertThrows(RuntimeException.class, ()->{atm.withdraw(-20);});
+		assertThrows(RuntimeException.class, ()->{atm.withdraw(333);});
+		assertThrows(RuntimeException.class, ()->{atm.withdraw(-10);});
 	}
 	@Test
 	public void testCanWithdraw() {
@@ -28,8 +28,8 @@ public class TestATM {
 		assertTrue(atm.canWithdraw(205));
 		assertFalse(atm.canWithdraw(44));
 		assertTrue(atm.canWithdraw(300));
-		assertFalse(atm.canWithdraw(79));
-		assertTrue(atm.canWithdraw(55));
+		assertFalse(atm.canWithdraw(Integer.MAX_VALUE));
+		assertTrue(atm.canWithdraw(Integer.MIN_VALUE));
 		assertFalse(atm.canWithdraw(0));
 	}
 }
