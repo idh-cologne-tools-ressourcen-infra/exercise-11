@@ -3,11 +3,9 @@ package de.ukoeln.idh.teaching.tri.ex11;
 import static org.junit.jupiter.api.Assertions.assertArrayEquals;
 import static org.junit.jupiter.api.Assertions.assertEquals;
 import static org.junit.jupiter.api.Assertions.assertThrows;
-
 import org.junit.jupiter.api.Test;
 
 public class TestATM {
-
 	ATM atm = new ATM();
 	
 	@Test
@@ -29,7 +27,7 @@ public class TestATM {
 		assertArrayEquals(new int[] {1,0,0,0,1,0,0}, atm.withdraw(520));
 		assertArrayEquals(new int[] {0,0,0,0,0,1,1}, atm.withdraw(15));
 		assertArrayEquals(new int[] {0,0,0,0,0,0,1}, atm.withdraw(5));
-		
+
 		assertThrows(RuntimeException.class, ()->{atm.withdraw(521);});
 		assertThrows(RuntimeException.class, ()->{atm.withdraw(-10);});
 	}
