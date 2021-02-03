@@ -20,11 +20,11 @@ public class ATM {
 	 */
 	public int[] withdraw(int amount) {
 		int[] numberOfBills = new int[bills.length];
-		for (int b = 0; b < bills.length; b++) {
-			int currentBill = bills[b];
-			numberOfBills[b] = amount / currentBill;
-			amount = amount - (numberOfBills[b] * currentBill);
-		}
+			for (int b = 0; b < bills.length; b++) {
+				int currentBill = bills[b];
+				numberOfBills[b] = amount / currentBill;
+				amount = amount - (numberOfBills[b] * currentBill);
+			}
 		if (amount == 0) {
 			return numberOfBills;
 		} else {
