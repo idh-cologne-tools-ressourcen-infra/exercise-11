@@ -1,5 +1,6 @@
 package de.ukoeln.idh.teaching.tri.ex11;
 
+import java.util.Arrays;
 import java.util.Scanner;
 
 import org.apache.commons.lang3.StringUtils;
@@ -26,6 +27,7 @@ public class ATM {
 			amount = amount - (numberOfBills[b] * currentBill);
 		}
 		if (amount == 0) {
+			System.out.println("Schauen wir mal rein, was hier übergeben wird... "+Arrays.toString(numberOfBills));
 			return numberOfBills;
 		} else {
 			throw new RuntimeException("Cannot withdraw");
