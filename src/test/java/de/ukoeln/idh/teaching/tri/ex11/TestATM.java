@@ -26,7 +26,6 @@ public class TestATM {
 
 	@Test
 	public void testWithdrawException() {
-		atm.withdraw(-15);
 		assertThrows(RuntimeException.class, () -> atm.withdraw(17));
 		assertThrows(RuntimeException.class, () -> atm.withdraw(-15));
 
